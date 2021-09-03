@@ -1,0 +1,358 @@
+@font-face {
+  font-family: 'Lovers Quarrel';
+  src: url('./fonts/LoversQuarrel-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-Medium.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-MediumItalic.ttf') format('ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+button {
+  appearance: none;
+  color: #111111;
+  font-family: 'Raleway';
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+}
+
+main {
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  height: 100px;
+  padding: 40px;
+}
+
+nav button {
+  padding: 20px 40px;
+}
+
+.active {
+  border-bottom: 2px solid #1F1F1F;
+}
+
+.section { 
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#main {
+  top: 0;
+  background-color: #FFFFFF;
+}
+
+.accent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+}
+
+#accent1 {
+  background-color: #efefef;
+}
+
+.photo {
+  position: absolute;
+}
+
+#photo1 {
+  left: 200px;
+  bottom: 160px;
+}
+
+#photo1 img {
+  width: 700px;
+}
+
+.photo:hover .credit { opacity: 1 }
+
+.credit {
+  opacity: 0;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9;
+  font-size: 8px;
+  padding: 10px;
+  background-color: #efefef;
+  transition: opacity 0.3s ease;
+}
+
+#title {
+  position: absolute; 
+  top: 200px;
+  left: 140px;
+  height: 90px;
+  padding: 10px 20px;
+  background-color: #1F1F1F;
+}
+
+#title h1 {
+  color: #FFFFFF;
+  font-family: 'Lovers Quarrel';
+  font-size: 80px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+#info {
+  position: absolute;
+  top: 300px;
+  left: 950px;
+  width: 500px;
+}
+
+h2 {
+  padding: 0;
+  color: #111111;
+  font-family: 'Raleway';
+  font-size: 40px; 
+  font-weight: 700;
+}
+
+#info p {
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-style: italic;
+}
+
+#info a {
+  font-style: normal;
+}
+
+#menu {
+  background-color: #efefef;
+}
+
+#accent2 {
+  height: 175px;
+  background-color: #ffffff;
+}
+
+#photo2 {
+  top: 125px;
+  right: 0px;
+}
+
+#photo2 img {
+  width: 400px;
+  filter: grayscale(100%);
+}
+
+#photo3 {
+  top: 275px;
+  right: 320px;
+  z-index: 9;
+}
+
+#photo3 img {
+  width: 500px;
+}
+
+#items {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.grid {
+  display: grid;
+  flex-flow: column wrap;
+  width: 930px;
+}
+
+.top {
+  display: flex;
+}
+
+.short {
+  width: 200px;
+}
+
+.long {
+  width: 300px;
+}
+
+.wide {
+  width: 550px;
+}
+
+.left, .right {
+  flex-flow: column wrap;
+}
+
+.cell {
+  margin: 20px;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  font-family: 'Lovers Quarrel';
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.cell div {
+  display: flex;
+}
+
+.cell p {
+  margin: 0 0 10px 0;
+}
+
+.cell .subtitle {
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.cell .name {
+  width: 60px;
+}
+
+.cell .entree {
+  width: 150px;
+}
+
+.cell .cost {
+  width: 40px;
+}
+
+#drinks {
+  grid-area: 'bev';
+}
+
+#starter {
+  grid-area: 'bre'; 
+}
+
+#sweets {
+  grid-area: 'des';
+}
+
+#meals {
+  grid-area: 'ent';
+}
+
+#about {
+  background-color: #ffffff;
+}
+
+#accent3 {
+  background-color: #ceafaf;
+}
+
+#photo4 {
+  position: absolute;
+  top: 80px;
+  left: 300px;
+}
+
+#photo4 img {
+  width: 400px;
+  filter: grayscale(100);
+}
+
+#photo5 {
+  top: 140px;
+  left: 150px;
+  z-index: 9;
+}
+
+#photo5 img {
+  width: 300px;
+}
+
+#hours {
+  position: absolute;
+  top: 200px;
+  left: 800px;
+  font-family: 'Raleway';
+  letter-spacing: 1px;
+}
+
+.date {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.place {
+  font-size: 12px;
+}
+
+#store {
+  position: absolute;
+  top: 200px;
+  left: 1100px;
+  width: 240px;
+  font-family: 'Raleway';
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-family: 'Raleway';
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+footer {
+  position: absolute;
+  right: 240px;
+  bottom: 90px;
+  font-family: 'Raleway';
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+footer b {
+  margin: 0 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
