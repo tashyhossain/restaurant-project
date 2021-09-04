@@ -3,6 +3,10 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
+  devtool: 'source-map',
+  devServer: {
+    static: './dist',
+  },
   module: {
     rules: [
       {
@@ -10,15 +14,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.xml$/i,
-        use: ['xml-loader'],
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],

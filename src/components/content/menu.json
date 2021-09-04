@@ -1,0 +1,44 @@
+{
+  "items": {
+    "@type": "beverages",
+    "title": "beverages",
+    "item": [
+      {
+        "cost": [],
+        "subtitle": "Hot or Iced"
+      },
+      {
+        "cost": "4",
+        "name": "Espresso"
+      },
+      {
+        "cost": "5",
+        "name": "Macchiato"
+      },
+      {
+        "cost": "5.5",
+        "name": "Latte"
+      },
+      {
+        "cost": "5.5",
+        "name": "Cappuccino"
+      },
+      {
+        "cost": "4",
+        "name": "Mocha"
+      },
+      {
+        "cost": "5.5",
+        "name": "Americano"
+      },
+      {
+        "cost": "2",
+        "name": "Steeped Tea"
+      },
+      {
+        "cost": [],
+        "subtitle": "Matcha / Earl Grey / Chai / Peppermint / Lemon"
+      }
+    ]
+  }
+}

@@ -1,46 +1,31 @@
-@font-face {
-  font-family: 'Lovers Quarrel';
-  src: url('./fonts/LoversQuarrel-Regular.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('./fonts/Raleway-Bold.ttf') format('ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('./fonts/Raleway-Medium.ttf') format('ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('./fonts/Raleway-MediumItalic.ttf') format('ttf');
-  font-weight: 400;
-  font-style: italic;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Raleway:wght@400;700&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #ffffff;
 }
 
-button {
-  appearance: none;
+a, button {
   color: #111111;
   font-family: 'Raleway';
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+button {
+  appearance: none;
+  font-size: 14px;
   border: 0;
   outline: none;
+  background-color: transparent;
+}
+
+button:hover {
+  border-bottom: 2px solid #1F1F1F; 
 }
 
 main {
@@ -52,11 +37,11 @@ nav {
   top: 0;
   right: 0;
   z-index: 99;
-  height: 100px;
-  padding: 40px;
+  padding: 30px 40px;
 }
 
 nav button {
+  margin: 0 10px;
   padding: 20px 40px;
 }
 
@@ -73,7 +58,7 @@ nav button {
   overflow: hidden;
 }
 
-#main {
+#home {
   top: 0;
   background-color: #FFFFFF;
 }
@@ -125,7 +110,7 @@ nav button {
   background-color: #1F1F1F;
 }
 
-#title h1 {
+h1 {
   color: #FFFFFF;
   font-family: 'Lovers Quarrel';
   font-size: 80px;
@@ -139,6 +124,10 @@ nav button {
   top: 300px;
   left: 950px;
   width: 500px;
+}
+
+#info button {
+  padding: 10px 0;
 }
 
 h2 {
