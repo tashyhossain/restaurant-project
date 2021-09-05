@@ -118,7 +118,7 @@ button[data-target='menu'].active {
 
 #title {
   position: absolute; 
-  top: 200px;
+  bottom: 470px;
   left: 140px;
   height: 90px;
   padding: 10px 20px;
@@ -136,7 +136,7 @@ h1 {
 
 #info {
   position: absolute;
-  top: 300px;
+  bottom: 250px;
   left: 950px;
   width: 500px;
 }
