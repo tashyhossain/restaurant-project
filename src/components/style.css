@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
+  overflow-y: hidden;
   background-color: #ffffff;
 }
 
@@ -21,15 +21,21 @@ button {
   font-size: 14px;
   border: 0;
   outline: none;
-  background-color: transparent;
+  background: 
+    linear-gradient(90deg, #1F1F1F, #1F1F1F) left bottom/0 2px no-repeat,
+    linear-gradient(90deg, transparent, transparent) left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, transparent, transparent) left bottom/100% no-repeat;
+  transition: background-size 0.3s ease,
+              background-color 0.5s ease;
 }
 
 button:hover {
-  border-bottom: 2px solid #1F1F1F; 
+  background-size: 100% 2px, 100% 2px, 100%;
+  transition: background-size 0.3s ease;
 }
 
 main {
-  width: 100%;
+  width: 1600px;
 }
 
 nav {
@@ -45,8 +51,17 @@ nav button {
   padding: 20px 40px;
 }
 
+button[data-target='home'].active,
+button[data-target='about'].active {
+  background: #efefef;
+}
+
+button[data-target='menu'].active {
+  background: #ceafaf;
+}
+
 .active {
-  border-bottom: 2px solid #1F1F1F;
+  transition: background-color 0.5s ease;
 }
 
 .section { 
@@ -193,20 +208,16 @@ h2 {
   display: flex;
 }
 
-.short {
+.small {
   width: 200px;
 }
 
+.medium {
+  width: 380px;
+}
+
 .long {
-  width: 300px;
-}
-
-.wide {
   width: 550px;
-}
-
-.left, .right {
-  flex-flow: column wrap;
 }
 
 .cell {
@@ -240,7 +251,7 @@ h3 {
   font-weight: 400;
 }
 
-.cell .name {
+.cell .variety {
   width: 60px;
 }
 

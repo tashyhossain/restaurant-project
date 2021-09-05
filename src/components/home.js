@@ -20,4 +20,4 @@ export default  create('div', { 'id': 'home', 'class': 'section' },
                     create('h2', {}, home.subtitle),
                     create('p', {}, home.caption),
                     create('p', {},
-                      create('button', { 'data-target': 'menu' }, home.link))));
+                      create('button', { 'data-target': 'menu', 'class': 'cta' }, home.link))));

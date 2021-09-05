@@ -1,8 +1,8 @@
 {
-  "items": {
-    "@type": "beverages",
+  "drinks": {
+    "style": "drinks",
     "title": "beverages",
-    "item": [
+    "items": [
       {
         "cost": [],
         "subtitle": "Hot or Iced"
@@ -38,6 +38,115 @@
       {
         "cost": [],
         "subtitle": "Matcha / Earl Grey / Chai / Peppermint / Lemon"
+      }
+    ]
+  },
+  "starter": {
+    "style": "starter",
+    "title": "bread",
+    "items": [
+      {
+        "cost": [],
+        "subtitle": "Served with Butter"
+      },
+      {
+        "cost": "1.5",
+        "name": "Sourdough"
+      },
+      {
+        "cost": "1.8",
+        "name": "Seeded Sourdough"
+      },
+      {
+        "cost": "1.5",
+        "name": "Rustic"
+      },
+      {
+        "cost": "1.8",
+        "name": "Walnut Rye"
+      },
+      {
+        "cost": "2",
+        "name": "Gluten Free"
+      },
+      {
+        "cost": "3",
+        "name": "Ciabatta"
+      },
+      {
+        "cost": "3",
+        "name": "Scone"
+      },
+      {
+        "cost": "2",
+        "name": "Bagel"
+      },
+      {
+        "cost": "2",
+        "name": "Croissant"
+      },
+      {
+        "cost": 1,
+        "subtitle": "Jam / Nut Butter / Cream Cheese / Chocolate Spread"
+      }
+    ]
+  },
+  "sweets": {
+    "style": "sweets",
+    "title": "desserts",
+    "items": [
+      {
+        "cost": "4",
+        "name": "Brioche Doughnut"
+      },
+      {
+        "cost": "4",
+        "name": "Cinnamon Bun"
+      },
+      {
+        "cost": "4",
+        "name": "Tiramisu"
+      },
+      {
+        "cost": "7",
+        "variety": "Cake",
+        "subtitle": "Chocolate / Red Velvet / Cheese / Coffee / Matcha"
+      },
+      {
+        "cost": "4",
+        "variety": "Eclair",
+        "subtitle": "Chocolate / Vanilla / Coffee / Matcha"
+      }
+    ]
+  },
+  "meals": {
+    "style": "meals",
+    "title": "salads & entrées",
+    "items": [
+      {
+        "cost": "6",
+        "entree": "Classic Caesar",
+        "subtitle": "Romaine with homemade Caesar dressing with turkey"
+      },
+      {
+        "cost": "6",
+        "entree": "Mixed Greens",
+        "subtitle": "Mixed Greens with house vinagrette with croutons"
+      },
+      {
+        "cost": "12",
+        "entree": "Chicken Pancetta",
+        "subtitle": "Grilled chicken, sauteed pancetta, tomato and fontana cheese"
+      },
+      {
+        "cost": "12",
+        "entree": "Eggplant Mozzarella",
+        "subtitle": "Fried eggplant topped with mozarella and basil"
+      },
+      {
+        "cost": "15",
+        "entree": "Pan Bagnat",
+        "subtitle": "Layered tuna, tomatoes, eggs and cucumbers on rustic bread"
       }
     ]
   }
