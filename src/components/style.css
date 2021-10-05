@@ -227,7 +227,6 @@ h2 {
 }
 
 .item {
-  flex: 1;
   margin: 0 20px 20px 0;
   font-family: var(--raleway);
   font-weight: 700;
@@ -356,7 +355,6 @@ h3 {
 }
 
 #about-store, #about-desc {
-  flex: 1;
   font-family: var(--raleway);
 }
 
@@ -422,54 +420,145 @@ footer b {
   }
 }
 
+@media screen and (orientation: landscape) {
+  .item, #about-store, #about-desc {
+    flex: 1;
+  }
+}
 
 @media screen and (orientation: portrait) {
+  body {
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100vw;
+    margin: 2em 0;
+    padding: 0;
+  }
+
+  nav button {
+    margin: 0;
+  }
+
+  section {
+    width: 100vw;
+    height: auto;
+  }
+
   #home-header {
     justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    height: 50%;
+    align-items: flex-end;
+    width: 100vw;
+    height: 50vh;
   }
 
   #home-photo {
     width: 100%;
   }
 
-  #home-content, #menu-content {
-    width: 100%;
-    height: auto;
-  }
-
-  #menu-header {
-    justify-content: flex-start;
-    align-items: start;
-    width: 100%;
-  }
-
-  #menu-photo {
-    height: 50%;
-  }
-
-  #photo4 {
-    opacity: 0;
-  }
-
   #home-content {
-    align-items: flex-start;
+    width: 100vw;
+    height: auto;
     background: var(--alt-bg);
   }
 
-  #about-header {
-    height: 0%;
+  .cta {
+    display: none;
   }
 
-  #about-content {
-    width: 100%;
+  #menu-content {
+    width: 100vw;
+    height: auto;
+  }
+
+  #menu-info {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+  }
+
+  .item {
+    width: 80%;
+  }
+
+  #menu-header {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  #menu-photo {
     height: 100%;
   }
 
+  #menu-accent {
+    display: none;
+  }
+
+  #about-header {
+    justify-content: flex-start;
+    width: 100vw;
+    height: 80vh;
+  }
+
+  #about-photo {
+    width: 100vw;
+    height: 60vh;
+  }
+
+  #photo5 {
+    bottom: 10%;
+  }
+
+  #about-content {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #about-info {
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    background: var(--alt2-bg);
+  }
+
+  #about-store {
+    width: 74%;
+  }
+
+  #about-desc {
+    width: 70%;
+  }
+
   footer {
-    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    height: 80%;
+  }
+
+  @media screen and (max-width: 499px) {
+    footer {
+      font-size: 0.8em;
+    }
+  }
+
+  @media screen and (min-width: 760px) and (max-width: 1023px) {
+    body {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    body {
+      font-size: 20px;
+    }
   }
 }
 
