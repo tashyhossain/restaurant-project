@@ -1,44 +1,66 @@
-import create from './create';
+import { create, build, addPage, addHeader, addContent, addImage } from './create';
 import { bread, coffee } from './images';
+import text from './content/about.json';
 
-const about = {
-  email: 'information@cafeclara.com',
-  phone: '555 555 5555',
-  titleA: 'hours & locations',
-  location: '123 Fake Street, Seattle, Washington',
-  hours: {
-    weekdays: '6 AM - 8 PM',
-    weekends: '6 AM - 6 PM',
-  },
-  titleB: 'about',
-  blurb: ['At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.', 'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'],
-};
+function buildHeader() {
+  let header = addHeader('about');
+  let imageA = addImage('photo4', bread.src, bread.credit, bread.href);
+  let imageB = addImage('photo5', coffee.src, coffee.credit, coffee.href);
 
-export default  create('div', { 'id': 'about', 'class': 'section' },
-                  create('div', { 'id': 'accent3', 'class': 'accent' },
-                    create('footer', {},
-                      create('b', {}, 'Email'),
-                      about.email,
-                      create('b', {}, 'Phone'),
-                      about.phone)),
-                  create('div', { 'id': 'photo4', 'class': 'photo' },
-                    create('img', { 'src': bread['src'] }),
-                    create('div', { 'class': 'credit' },
-                      create('a', { 'href': bread['href'] }, bread['credit']))),
-                  create('div', { 'id': 'photo5', 'class': 'photo' },
-                    create('img', { 'src': coffee['src'] }),
-                    create('div', { 'class': 'credit' },
-                      create('a', { 'href': coffee['href'] }, coffee['credit']))),
-                  create('div', { 'id': 'hours' },
-                    create('h4', {}, about.titleA),
-                    create('div', { 'class': 'place' },
-                      create('p', {}, about.location)),
-                    create('div', {},
-                      create('p', {}, 'Weekdays'),
-                      create('p', { 'class': 'date' }, about.hours.weekdays),
-                      create('p', {}, 'Weekends'),
-                      create('p', { 'class': 'date' }, about.hours.weekends))),
-                  create('div', { 'id': 'store' }, 
-                    create('h4', {}, about.titleB),
-                    create('p', {}, about.blurb[0]),
-                    create('p', {}, about.blurb[1])));
+  build(header.childNodes[0], imageA, imageB);
+  return header;
+}
+
+function buildStoreInfo() {
+  let store = create('div', { 'id': 'about-store'});
+  let title = create('h4', {}, text['titleA']);
+  let location = build(create('div', { 'id': 'about-location' }), create('p', {}, text['location']));
+  let hours = create('div', { 'id': 'about-hours' });
+  let weekdays = create('p', {}, 'Weekdays');
+  let weekdaysHrs = create('p', { 'class': 'date' }, text['hours']['weekdays']);
+  let weekends = create('p', {}, 'Weekends');
+  let weekendsHrs = create('p', { 'class': 'date' }, text['hours']['weekends']);
+
+  return build(store, title, location, build(hours, weekdays, weekdaysHrs, weekends, weekendsHrs));
+}
+
+function buildDescription() {
+  let desc = create('div', { 'id': 'about-desc' });
+  let title = create('h4', {}, text['titleB']);
+  let para1 = create('p', {}, text['desc']['para1']);
+  let para2 = create('p', {}, text['desc']['para2']);
+
+  return build(desc, title, para1, para2);
+}
+
+function buildContent() {
+  let content = addContent('about');
+  let storeInfo = buildStoreInfo();
+  let description = buildDescription();
+
+  build(content.childNodes[0], storeInfo, description);
+  return content;
+}
+
+function buildFooter() {
+  let footer = document.createElement('footer');
+  let titleA = create('b', {}, 'Email');
+  let email = document.createTextNode(text.email);
+  let titleB = create('b', {}, 'Phone');
+  let phone = document.createTextNode(text.phone);
+
+  build(footer, titleA, email, titleB, phone);
+  return footer;
+}
+
+function loadAbout() {
+  let about = addPage('about');
+  let header = buildHeader();
+  let content = buildContent();
+  let footer = buildFooter();
+  build(about, header, content);
+  build(about.childNodes[0], footer);
+  return about;
+}
+
+export default loadAbout();

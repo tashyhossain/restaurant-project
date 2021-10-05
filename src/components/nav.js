@@ -22,16 +22,12 @@ function createBtn(name) {
   btn.classList.add(name);
   btn.addEventListener('click', pageScroll);
 
-  if(name === 'home') btn.classList.add('active');
-
+  if (name === 'home') btn.classList.add('active');
   return btn;
 }
 
 function createNav(...btns) {
   let nav = document.createElement('nav');
-  let span = document.createElement('span');
-  span.classList.add('hover');
-  nav.appendChild(span);
   for (let btn of btns) nav.appendChild(btn);
   return nav;
 }

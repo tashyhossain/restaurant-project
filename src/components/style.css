@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Raleway:wght@400;700&display=swap');
 
+:root {
+  --raleway: 'Raleway', sans-serif;
+  --quarrel: 'Lovers Quarrel', sans-serif;
+  --main-color: #111111;
+  --alt-color: #1F1F1F;
+  --main-bg: #FFFFFF;
+  --alt-bg: #EFEFEF;
+  --alt2-bg: #CEAFAF;
+  --title-bg: #1F1F1F;
+  --title-color: #FFFFFF;
+}
+
 body {
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
-  background-color: #ffffff;
+  overflow: hidden;
 }
 
 a, button {
-  color: #111111;
-  font-family: 'Raleway';
+  color: var(--main-text);
+  font-family: var(--raleway);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -18,7 +29,6 @@ a, button {
 
 button {
   appearance: none;
-  font-size: 14px;
   border: 0;
   outline: none;
   background: 
@@ -34,325 +44,432 @@ button:hover {
   transition: background-size 0.3s ease;
 }
 
-main {
-  width: 1600px;
+main { 
+  width: 100%;
 }
 
 nav {
+  display: flex;
+  justify-content: flex-end;
   position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 99;
-  padding: 30px 40px;
+  width: 100%;
+  z-index: 999;
 }
 
 nav button {
-  margin: 0 10px;
-  padding: 20px 40px;
+  margin: 2em 3em 2em 0;
+  padding: 1.5em 2.5em;
+  font-size: 1em;
 }
 
-button[data-target='home'].active,
-button[data-target='about'].active {
-  background: #efefef;
+button.home.active,
+button.about.active {
+  background: var(--alt-bg);
 }
 
-button[data-target='menu'].active {
-  background: #ceafaf;
+button.menu.active {
+  background: var(--alt2-bg);
 }
 
 .active {
   transition: background-color 0.5s ease;
 }
 
-.section { 
+.photo {
+  position: absolute;
+}
+
+.credit {
+  opacity: 0;
+  position: absolute;
+  z-index: 9;
+  right: 20px;
+  bottom: 20px;
+  font-size: 0.6em;
+  padding: 10px;
+  background-color: var(--alt-bg);
+  transition: opacity 0.3s ease;
+}
+
+.photo:hover .credit { opacity: 1; }
+
+section {
+  display: flex;
+  flex-flow: row wrap;
   position: relative;
   width: 100%;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-#home {
-  top: 0;
-  background-color: #FFFFFF;
 }
 
 .accent {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 30%;
 }
 
-#accent1 {
-  background-color: #efefef;
+#home {
+  background: var(--main-bg);
 }
 
-.photo {
-  position: absolute;
+#home-accent {
+  background: var(--alt-bg);
+}
+
+#home-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+#home-photo {
+  position: relative;
+  z-index: 99;
+  width: 80%;
+  height: auto;
 }
 
 #photo1 {
-  left: 200px;
-  bottom: 160px;
+  position: relative;
 }
 
 #photo1 img {
-  width: 700px;
-}
-
-.photo:hover .credit { opacity: 1 }
-
-.credit {
-  opacity: 0;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  z-index: 9;
-  font-size: 8px;
-  padding: 10px;
-  background-color: #efefef;
-  transition: opacity 0.3s ease;
+  width: 100%;
 }
 
 #title {
-  position: absolute; 
-  bottom: 470px;
-  left: 140px;
-  height: 90px;
-  padding: 10px 20px;
-  background-color: #1F1F1F;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  background-color: var(--title-bg);
 }
 
 h1 {
-  color: #FFFFFF;
-  font-family: 'Lovers Quarrel';
-  font-size: 80px;
-  font-weight: 400;
   margin: 0;
-  padding: 0;
+  padding: 0.1em 0.5em;
+  color: var(--title-color);
+  font-family: var(--quarrel);
+  font-size: 6em;
+  font-weight: 400;
 }
 
-#info {
-  position: absolute;
-  bottom: 250px;
-  left: 950px;
-  width: 500px;
+#home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  z-index: 99;
 }
 
-#info button {
-  padding: 10px 0;
+#home-info {
+  width: 80%;
+  height: auto;
+  padding: 4em;
 }
 
 h2 {
   padding: 0;
-  color: #111111;
-  font-family: 'Raleway';
-  font-size: 40px; 
+  color: var(--main-color);
+  font-family: var(--raleway);
+  font-size: 3em;
   font-weight: 700;
 }
 
-#info p {
-  font-family: 'Raleway';
+#home-info p {
+  font-family: var(--raleway);
+  font-size: 1.2em;
   font-weight: 400;
   font-style: italic;
 }
 
-#info a {
-  font-style: normal;
+#home-info button {
+  padding: 1em 0;
+  font-size: 1em;
+  background: 
+    linear-gradient(90deg, #1F1F1F, #1F1F1F) left bottom/0 2px no-repeat,
+    linear-gradient(90deg, transparent, transparent) left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, transparent, transparent) left bottom/100% no-repeat;
+  transition: background-size 0.3s ease,
+              background-color 0.5s ease;
+}
+
+#home-info button:hover {
+  background-size: 100% 2px, 100% 2px, 100%;
+  transition: background-size 0.3s ease;
 }
 
 #menu {
-  background-color: #efefef;
+  background: var(--alt-bg);
 }
 
-#accent2 {
-  height: 175px;
-  background-color: #ffffff;
+#menu-accent {
+  background: var(--main-bg);
 }
 
-#photo2 {
-  top: 125px;
-  right: 0px;
-}
-
-#photo2 img {
-  width: 400px;
-  filter: grayscale(100%);
-}
-
-#photo3 {
-  top: 275px;
-  right: 320px;
-  z-index: 9;
-}
-
-#photo3 img {
-  width: 500px;
-}
-
-#items {
-  position: absolute;
-  top: 50px;
-  left: 100px;
-}
-
-.grid {
-  display: grid;
-  flex-flow: column wrap;
-  width: 930px;
-}
-
-.top {
+#menu-content {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
 }
 
-.small {
-  width: 200px;
+#menu-info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 80%;
+  height: 60%;
+  z-index: 99;
 }
 
-.medium {
-  width: 380px;
-}
-
-.long {
-  width: 550px;
-}
-
-.cell {
-  margin: 20px;
-  font-family: 'Raleway';
+.item {
+  flex: 1;
+  margin: 0 20px 20px 0;
+  font-family: var(--raleway);
   font-weight: 700;
-  font-size: 10px;
+  font-size: 0.8em;
   letter-spacing: 1px;
 }
 
 h3 {
-  margin: 0 0 10px 0;
-  font-family: 'Lovers Quarrel';
-  font-size: 35px;
+  margin: 0 0 0.5em 0;
+  font-family: var(--quarrel);
+  font-size: 4em;
   font-weight: 400;
   letter-spacing: 1px;
   text-align: center;
 }
 
-.cell div {
+.item div {
   display: flex;
 }
 
-.cell p {
-  margin: 0 0 10px 0;
+.item p {
+  margin: 0 0 1em 0;
 }
 
-.cell .subtitle {
+.item .subtitle {
   text-transform: uppercase;
-  font-size: 8px;
+  font-size: 0.8em;
   font-weight: 400;
 }
 
-.cell .variety {
-  width: 60px;
-}
-
-.cell .entree {
-  width: 150px;
-}
-
-.cell .cost {
+.item .cost {
   width: 40px;
 }
 
-#drinks {
-  grid-area: 'bev';
+#menu-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+  height: 100%;
 }
 
-#starter {
-  grid-area: 'bre'; 
+#menu-photo {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  z-index: 99;
 }
 
-#sweets {
-  grid-area: 'des';
-}
-
-#meals {
-  grid-area: 'ent';
-}
-
-#about {
-  background-color: #ffffff;
-}
-
-#accent3 {
-  background-color: #ceafaf;
-}
-
-#photo4 {
-  position: absolute;
-  top: 80px;
-  left: 300px;
-}
-
-#photo4 img {
-  width: 400px;
+#photo2 {
+  right: 0;
+  height: 100%;
   filter: grayscale(100);
 }
 
+#photo2 img {
+  height: 100%;
+}
+
+#photo3 {
+  bottom: 10%;
+  width: 60%;
+}
+
+#photo3 img {
+  width: 100%;
+}
+
+#about {
+  background-color: var(--main-bg);
+}
+
+#about-accent {
+  background-color: var(--alt2-bg);
+}
+
+#about-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+}
+
+#about-photo {
+  position: relative;
+  width: 75%;
+  height: 80%;
+  z-index: 99;
+}
+
+#photo4 {
+  right: 0;
+  height: 100%;
+  filter: grayscale(100);
+}
+
+#photo4 img {
+  height: 100%;
+}
+
 #photo5 {
-  top: 140px;
-  left: 150px;
-  z-index: 9;
+  bottom: 30%;
+  width: 50%;
 }
 
 #photo5 img {
-  width: 300px;
+  width: 100%;
 }
 
-#hours {
-  position: absolute;
-  top: 200px;
-  left: 800px;
-  font-family: 'Raleway';
+
+#about-content {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 55%;
+  height: 100%;
+}
+
+#about-info {
+  display: flex;
+  flex-flow: row wrap;
+  width: 70%;
+  z-index: 99;
+}
+
+#about-store, #about-desc {
+  flex: 1;
+  font-family: var(--raleway);
+}
+
+#about-store {
   letter-spacing: 1px;
+}
+
+#about-store p {
+  font-size: 1.1em;
+}
+
+#about-location {
+  font-size: 0.9em;
+}
+
+#about-desc {
+  padding-right: 4%;
 }
 
 .date {
-  font-size: 10px;
   font-weight: 700;
-}
-
-.place {
-  font-size: 12px;
-}
-
-#store {
-  position: absolute;
-  top: 200px;
-  left: 1100px;
-  width: 240px;
-  font-family: 'Raleway';
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 0.9em;
 }
 
 h4 {
-  font-family: 'Raleway';
-  font-size: 20px;
+  font-family: var(--raleway);
+  font-size: 1.4em;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 footer {
-  position: absolute;
-  right: 240px;
-  bottom: 90px;
-  font-family: 'Raleway';
-  font-size: 12px;
-  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  width: 50%;
+  height: 100%;
+  font-family: var(--raleway);
 }
 
 footer b {
-  margin: 0 20px;
-  font-size: 11px;
+  margin: 0 1.5em;
+  font-size: 1em;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 1700px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1701px) and (max-width: 1920) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (orientation: portrait) {
+  #home-header {
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 50%;
+  }
+
+  #home-photo {
+    width: 100%;
+  }
+
+  #home-content, #menu-content {
+    width: 100%;
+    height: auto;
+  }
+
+  #menu-header {
+    justify-content: flex-start;
+    align-items: start;
+    width: 100%;
+  }
+
+  #menu-photo {
+    height: 50%;
+  }
+
+  #photo4 {
+    opacity: 0;
+  }
+
+  #home-content {
+    align-items: flex-start;
+    background: var(--alt-bg);
+  }
+
+  #about-header {
+    height: 0%;
+  }
+
+  #about-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  footer {
+    width: 100%;
+  }
+}
+

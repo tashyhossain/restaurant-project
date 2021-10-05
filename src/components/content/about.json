@@ -1,0 +1,15 @@
+{
+  "email": "information@cafeclara.com",
+  "phone": "555 555 5555",
+  "titleA": "hours & locations",
+  "location": "123 Fake Street, Seattle, Washington",
+  "hours": {
+    "weekdays": "6 AM - 8 PM",
+    "weekends": "6 AM - 6 PM"
+  },
+  "titleB": "about",
+  "desc": {
+    "para1": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    "para2": "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+  }
+}

@@ -1,39 +1,47 @@
-import create from './create';
+import { create, build, addPage, addHeader, addContent, addImage } from './create';
 import { side, salad } from './images';
-import menu from './content/menu.json';
+import text from './content/menu.json';
 
-function createMenu(category, pos) {
-  let items = create('div', { 'id': category.style, 'class': `cell ${pos}` },
-                create('h3', {}, category.title));
+function addItems(type) {
+  let items = create('div', { 'id': type.style, 'class': 'item' });
+  let title = create('h3', {}, type.title);
+  build(items, title);
 
-  for (let item of category.items) {
-    let div = document.createElement('div');
+  for (let item of type.items) {
+    let dom = document.createElement('div');
     for (let key of Object.keys(item)) {
-      let line = document.createElement('p');
-      line.classList.add(key);
-      line.textContent = item[key];
-      div.appendChild(line);
+      let line = create('p', { 'class': key }, item[key]);
+      build(dom, line);
     }
-    items.appendChild(div);
+    build(items, dom);
   }
-
   return items;
 }
 
-export default  create('div', { 'id': 'menu', 'class': 'section' }, 
-                  create('div', { 'id': 'accent2', 'class': 'accent' }),
-                  create('div', { 'id': 'photo2', 'class': 'photo' },
-                    create('img', { 'src': side['src'] }),
-                    create('div', { 'class': 'credit' },
-                      create('a', { 'href': side['href'] }, side['credit']))),
-                  create('div', { 'id': 'photo3', 'class': 'photo' }, 
-                    create('img', { 'src': salad['src'] }),
-                    create('div', { 'class': 'credit' }, 
-                      create('a', { 'href': salad['href'] }, salad['credit']))),
-                  create('div', { 'id': 'items' },
-                    create('div', { 'class': 'grid' }, 
-                      create('div', { 'class': 'top' }, 
-                        createMenu(menu['drinks'], 'small'),
-                        createMenu(menu['starter'], 'small'),
-                        createMenu(menu['sweets'], 'medium')),
-                      createMenu(menu['meals'], 'long'))));
+function buildContent() {
+  let content = addContent('menu');
+  let drinks = addItems(text['drinks']);
+  let starter = addItems(text['starter']);
+  let sweets = addItems(text['sweets']);
+  let meals = addItems(text['meals']);
+  build(content.childNodes[0], drinks, starter, sweets, meals);
+  return content;
+}
+
+function buildHeader() {
+  let header = addHeader('menu');
+  let imageA = addImage('photo4', side.src, side.credit, side.href);
+  let imageB = addImage('photo3', salad.src, salad.credit, salad.href);
+  build(header.childNodes[0], imageA, imageB);
+  return header;
+}
+
+function loadMenu() {
+  let menu = addPage('menu');
+  let content = buildContent();
+  let header = buildHeader();
+  build(menu, content, header);
+  return menu;
+}
+
+export default loadMenu();
